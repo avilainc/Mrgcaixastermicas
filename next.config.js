@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
+  basePath: '/Mrgcaixastermicas',
+  assetPrefix: '/Mrgcaixastermicas',
   images: {
     unoptimized: true,
   },
