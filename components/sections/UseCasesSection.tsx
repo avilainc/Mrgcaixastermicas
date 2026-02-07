@@ -209,7 +209,7 @@ const UseCasesSection = () => {
                   <span className="text-xl">O Problema</span>
                 </h4>
                 <p className="text-red-800 text-lg leading-relaxed">
-                  "{useCases[selectedCase].problem}"
+                  &ldquo;{useCases[selectedCase].problem}&rdquo;
                 </p>
               </div>
 

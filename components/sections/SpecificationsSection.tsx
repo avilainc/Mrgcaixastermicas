@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaSearch, FaRulerCombined, FaWeight, FaBox } from 'react-icons/fa';
+import { FaSearch, FaRulerCombined, FaWeight, FaBox, FaWhatsapp } from 'react-icons/fa';
 
 interface Specification {
   litros: number;
