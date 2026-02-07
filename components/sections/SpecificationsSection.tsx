@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaSearch, FaRulerCombined, FaWeight, FaBox, FaWhatsapp } from 'react-icons/fa';
+import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 interface Specification {
   litros: number;
@@ -396,6 +397,7 @@ const SpecificationsSection = () => {
             <a
               href="tel:17991622655"
               className="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+              onClick={() => trackPhoneClick('specifications_section')}
             >
               📞 (17) 99162-2655
             </a>
@@ -404,6 +406,7 @@ const SpecificationsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+              onClick={() => trackWhatsAppClick('specifications_section')}
             >
               <FaWhatsapp className="text-xl" />
               WhatsApp

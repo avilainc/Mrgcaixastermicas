@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,6 +47,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
+              onClick={() => trackWhatsAppClick('header_desktop')}
             >
               <FaWhatsapp className="text-xl" />
               WhatsApp
@@ -80,7 +82,10 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg mt-4 w-fit transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                trackWhatsAppClick('header_mobile');
+                setIsMenuOpen(false);
+              }}
             >
               <FaWhatsapp className="text-xl" />
               WhatsApp

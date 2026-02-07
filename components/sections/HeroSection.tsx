@@ -1,4 +1,7 @@
+'use client';
+
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { trackWhatsAppClick, trackQuoteRequest } from '@/lib/analytics';
 
 const HeroSection = () => {
   return (
@@ -16,6 +19,7 @@ const HeroSection = () => {
             <a
               href="#contato"
               className="inline-flex items-center justify-center bg-white text-primary-700 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg"
+              onClick={() => trackQuoteRequest('hero_button')}
             >
               Solicitar Orçamento
             </a>
@@ -24,6 +28,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg"
+              onClick={() => trackWhatsAppClick('hero_button')}
             >
               <FaWhatsapp className="text-2xl" />
               WhatsApp

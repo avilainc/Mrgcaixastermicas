@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaUtensils, FaBiking, FaIndustry, FaGlassCheers, FaHospital, FaStore, FaFish, FaIceCream, FaBirthdayCake, FaTruck, FaFlask, FaHamburger } from 'react-icons/fa';
+import { trackWhatsAppClick, trackQuoteRequest } from '@/lib/analytics';
 
 interface UseCase {
   icon: JSX.Element;
@@ -257,6 +258,7 @@ const UseCasesSection = () => {
                   <a
                     href="#contato"
                     className="inline-flex items-center justify-center bg-white text-primary-700 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+                    onClick={() => trackQuoteRequest(`use_case_${useCases[selectedCase].persona}`)}
                   >
                     Solicitar Orçamento Agora
                   </a>
@@ -265,6 +267,7 @@ const UseCasesSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+                    onClick={() => trackWhatsAppClick(`use_case_${useCases[selectedCase].persona}`)}
                   >
                     <span className="text-xl">💬</span>
                     Falar no WhatsApp
