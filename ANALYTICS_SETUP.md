@@ -1,6 +1,47 @@
 # 📊 Guia de Configuração - Analytics
 
-Este guia explica como configurar o Google Analytics 4 e Meta Pixel no site.
+Este guia explica como usar o Google Tag Manager, Google Analytics 4 e Meta Pixel no site.
+
+## 🎯 Google Tag Manager (GTM) - CONFIGURADO ✅
+
+### Status Atual
+
+O Google Tag Manager já está instalado e configurado com o ID:
+```
+GTM-MVWW7V83
+```
+
+### ✅ O que já está funcionando:
+
+1. **GTM instalado** - Código no `<head>` e `<body>`
+2. **DataLayer configurado** - Todos os eventos são enviados para o GTM
+3. **Eventos rastreados automaticamente**:
+   - `whatsapp_click` - Cliques WhatsApp
+   - `phone_click` - Cliques telefone
+   - `form_submit` - Formulário enviado
+   - `quote_request` - Pedidos de orçamento
+   - `product_view` - Visualização de produtos
+
+### 📋 Próximos Passos no GTM:
+
+Acesse: https://tagmanager.google.com/
+
+1. **Adicionar Google Analytics 4**:
+   - Tags → New → Google Analytics: GA4 Event
+   - Configuration Tag → Adicione seu Measurement ID
+   - Trigger: All Pages
+
+2. **Adicionar Meta Pixel**:
+   - Tags → New → Custom HTML
+   - Cole o código do seu Meta Pixel
+   - Trigger: All Pages
+
+3. **Configurar Eventos Personalizados**:
+   - Triggers → New → Custom Event
+   - Configure triggers para: `whatsapp_click`, `form_submit`, etc.
+   - Crie tags correspondentes para cada evento
+
+---
 
 ## 🎯 Google Analytics 4 (GA4)
 
