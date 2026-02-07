@@ -394,13 +394,13 @@ const SpecificationsSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:1732165672"
+              href="tel:17991622655"
               className="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
             >
-              📞 (17) 3216-5672
+              📞 (17) 99162-2655
             </a>
             <a
-              href="https://wa.me/5517321656672"
+              href="https://wa.me/5517991622655"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"

@@ -261,7 +261,7 @@ const UseCasesSection = () => {
                     Solicitar Orçamento Agora
                   </a>
                   <a
-                    href="https://wa.me/5517321656672?text=Olá! Vi o caso de uso de *{useCases[selectedCase].persona}* no site e preciso de uma solução assim."
+                    href="https://wa.me/5517991622655?text=Olá! Vi o caso de uso de *{useCases[selectedCase].persona}* no site e preciso de uma solução assim."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"

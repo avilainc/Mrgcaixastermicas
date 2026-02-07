@@ -35,7 +35,7 @@ const Footer = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://wa.me/5517321656672"
+                href="https://wa.me/5517991622655"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl hover:text-green-400 transition-colors"
@@ -92,7 +92,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <FaPhone className="text-primary-400" />
-                <a href="tel:1732165672" className="hover:text-primary-400">(17) 3216-5672</a>
+                <a href="tel:17991622655" className="hover:text-primary-400">(17) 99162-2655</a>
               </li>
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-primary-400" />

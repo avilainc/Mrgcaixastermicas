@@ -20,7 +20,7 @@ const HeroSection = () => {
               Solicitar Orçamento
             </a>
             <a
-              href="https://wa.me/5517321656672"
+              href="https://wa.me/5517991622655"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg"

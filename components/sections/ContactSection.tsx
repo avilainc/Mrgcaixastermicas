@@ -22,7 +22,7 @@ const ContactSection = () => {
     e.preventDefault();
     // Criar mensagem para WhatsApp
     const whatsappMessage = `Olá! Gostaria de solicitar um orçamento.%0A%0ANome: ${formData.name}%0AEmail: ${formData.email}%0ATelefone: ${formData.phone}%0AMensagem: ${formData.message}`;
-    window.open(`https://wa.me/5517321656672?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/5517991622655?text=${whatsappMessage}`, '_blank');
   };
 
   const contactInfo = [

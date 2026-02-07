@@ -121,9 +121,9 @@ MRGCaixasTermicas/
 ## 📞 Configurações Importantes
 
 ### WhatsApp e Telefone
-O número de telefone e WhatsApp já está configurado como: **(17) 3216-5672**
+O número de telefone e WhatsApp já está configurado como: **(17) 99162-2655**
 
-Formato internacional: `5517321656672`
+Formato internacional: `5517991622655`
 
 Este número está presente nos seguintes arquivos:
 - `components/Header.tsx`
