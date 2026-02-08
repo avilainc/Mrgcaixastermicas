@@ -34,26 +34,6 @@ const HeroSection = () => {
               WhatsApp
             </a>
           </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">431</div>
-              <div className="text-primary-100">Seguidores</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">⭐⭐⭐</div>
-              <div className="text-primary-100">3 Avaliações</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">14</div>
-              <div className="text-primary-100">Posts</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-primary-100">Sob Medida</div>
-            </div>
-          </div>
         </div>
       </div>
       
