@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaSearch, FaRulerCombined, FaWeight, FaBox, FaWhatsapp } from 'react-icons/fa';
+import { FaSearch, FaChevronDown, FaChevronUp, FaWhatsapp } from 'react-icons/fa';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 interface Specification {
@@ -24,79 +24,79 @@ interface Specification {
 
 const SpecificationsSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedSize, setSelectedSize] = useState<number | null>(null);
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const specifications: Specification[] = [
     {
       litros: 9,
-      garrafas: '1 CX DE LATA',
-      dimExternas: { h: 20, l: 18, c: 31 },
-      dimInternas: { h: 15, l: 21, c: 27 },
-      peso: '3 KG',
-      valorNormal: 'R$ 225,00',
-      valorInox: 'R$ 374,00'
+      garrafas: '10',
+      dimExternas: { h: 27, l: 23, c: 28 },
+      dimInternas: { h: 22, l: 18, c: 27 },
+      peso: '3,2 KG',
+      valorNormal: 'R$ 175,00',
+      valorInox: 'R$ 310,00'
     },
     {
       litros: 15,
-      garrafas: '1 CX DE LATA + PET 2L',
-      dimExternas: { h: 28, l: 23, c: 41 },
-      dimInternas: { h: 22, l: 19, c: 37 },
-      peso: '5 KG',
-      valorNormal: 'R$ 255,00',
-      valorInox: 'R$ 432,00'
+      garrafas: '12',
+      dimExternas: { h: 26, l: 24, c: 34 },
+      dimInternas: { h: 21, l: 19, c: 29 },
+      peso: '3,5 KG',
+      valorNormal: 'R$ 195,00',
+      valorInox: 'R$ 345,00'
     },
     {
       litros: 25,
-      garrafas: '2 CXS DE LATA + PET 2L',
-      dimExternas: { h: 36, l: 34, c: 45 },
-      dimInternas: { h: 26, l: 26, c: 37 },
-      peso: '6 KG',
-      valorNormal: 'R$ 305,00',
-      valorInox: 'R$ 484,00'
+      garrafas: '24',
+      dimExternas: { h: 34, l: 27, c: 44 },
+      dimInternas: { h: 29, l: 22, c: 39 },
+      peso: '5 KG',
+      valorNormal: 'R$ 265,00',
+      valorInox: 'R$ 415,00'
     },
     {
       litros: 40,
-      garrafas: '16',
-      dimExternas: { h: 37, l: 35, c: 66 },
-      dimInternas: { h: 26, l: 27, c: 58 },
-      peso: '10 KG',
-      valorNormal: 'R$ 385,00',
-      valorInox: 'R$ 605,00'
+      garrafas: '36',
+      dimExternas: { h: 40, l: 34, c: 50 },
+      dimInternas: { h: 35, l: 29, c: 45 },
+      peso: '8 KG',
+      valorNormal: 'R$ 310,00',
+      valorInox: 'R$ 500,00'
     },
     {
       litros: 50,
-      garrafas: '20',
-      dimExternas: { h: 40, l: 42, c: 67 },
-      dimInternas: { h: 28, l: 32, c: 57 },
-      peso: '12 KG',
-      valorNormal: 'R$ 445,00',
-      valorInox: 'R$ 682,00'
+      garrafas: '48',
+      dimExternas: { h: 40, l: 40, c: 51 },
+      dimInternas: { h: 35, l: 35, c: 46 },
+      peso: '9 KG',
+      valorNormal: 'R$ 365,00',
+      valorInox: 'R$ 555,00'
     },
     {
       litros: 70,
-      garrafas: '40',
-      dimExternas: { h: 45, l: 42, c: 77 },
-      dimInternas: { h: 33, l: 32, c: 67 },
-      peso: '16 KG',
-      valorNormal: 'R$ 505,00',
-      valorInox: 'R$ 748,00'
+      garrafas: '60',
+      dimExternas: { h: 45, l: 41, c: 62 },
+      dimInternas: { h: 40, l: 36, c: 57 },
+      peso: '13 KG',
+      valorNormal: 'R$ 440,00',
+      valorInox: 'R$ 665,00'
     },
     {
       litros: 100,
-      garrafas: '60',
-      dimExternas: { h: 50, l: 48, c: 80 },
-      dimInternas: { h: 38, l: 38, c: 70 },
-      peso: '18 KG',
-      valorNormal: 'R$ 565,00',
-      valorInox: 'R$ 858,00'
+      garrafas: '72',
+      dimExternas: { h: 50, l: 46, c: 67 },
+      dimInternas: { h: 45, l: 41, c: 62 },
+      peso: '14 KG',
+      valorNormal: 'R$ 495,00',
+      valorInox: 'R$ 750,00'
     },
     {
       litros: 120,
-      garrafas: '80',
-      dimExternas: { h: 53, l: 48, c: 85 },
-      dimInternas: { h: 42, l: 38, c: 75 },
-      peso: '20 KG',
-      valorNormal: 'R$ 620,00',
+      garrafas: '96',
+      dimExternas: { h: 54, l: 46, c: 76 },
+      dimInternas: { h: 49, l: 41, c: 71 },
+      peso: '17 KG',
+      valorNormal: 'R$ 600,00',
       valorInox: 'R$ 935,00'
     },
     {
@@ -163,6 +163,10 @@ const SpecificationsSection = () => {
     spec.garrafas.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const toggleCard = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
   return (
     <section id="especificacoes" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container-custom">
@@ -171,7 +175,7 @@ const SpecificationsSection = () => {
             Tabela de Tamanhos e Capacidades
           </h2>
           <p className="text-xl text-gray-600">
-            Especificações técnicas detalhadas de todos os nossos modelos
+            Escolha o tamanho ideal para sua necessidade
           </p>
         </div>
 
@@ -189,136 +193,70 @@ const SpecificationsSection = () => {
           </div>
         </div>
 
-        {/* Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white rounded-lg p-4 shadow-md flex items-center gap-3">
-            <div className="bg-primary-100 p-3 rounded-lg">
-              <FaBox className="text-primary-600 text-2xl" />
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900">{specifications.length}</div>
-              <div className="text-sm text-gray-600">Tamanhos Disponíveis</div>
-            </div>
-          </div>
-          <div className="bg-white rounded-lg p-4 shadow-md flex items-center gap-3">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <FaRulerCombined className="text-green-600 text-2xl" />
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900">9L - 380L</div>
-              <div className="text-sm text-gray-600">Faixa de Capacidade</div>
-            </div>
-          </div>
-          <div className="bg-white rounded-lg p-4 shadow-md flex items-center gap-3">
-            <div className="bg-orange-100 p-3 rounded-lg">
-              <FaWeight className="text-orange-600 text-2xl" />
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900">3 - 39 KG</div>
-              <div className="text-sm text-gray-600">Variação de Peso</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop Table */}
-        <div className="hidden lg:block bg-white rounded-xl shadow-xl overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-primary-600 text-white">
-                <tr>
-                  <th className="px-4 py-4 text-left">Capacidade</th>
-                  <th className="px-4 py-4 text-left">Garrafas 600ml</th>
-                  <th className="px-4 py-4 text-center" colSpan={3}>Dimensões Externas (cm)</th>
-                  <th className="px-4 py-4 text-center" colSpan={3}>Dimensões Internas (cm)</th>
-                  <th className="px-4 py-4 text-center">Peso</th>
-                  <th className="px-4 py-4 text-center" colSpan={2}>Valores Referência</th>
-                </tr>
-                <tr className="bg-primary-700">
-                  <th className="px-4 py-2 text-left text-sm">Litros</th>
-                  <th className="px-4 py-2 text-left text-sm"></th>
-                  <th className="px-4 py-2 text-center text-sm">H</th>
-                  <th className="px-4 py-2 text-center text-sm">L</th>
-                  <th className="px-4 py-2 text-center text-sm">C</th>
-                  <th className="px-4 py-2 text-center text-sm">H</th>
-                  <th className="px-4 py-2 text-center text-sm">L</th>
-                  <th className="px-4 py-2 text-center text-sm">C</th>
-                  <th className="px-4 py-2 text-center text-sm">KG</th>
-                  <th className="px-4 py-2 text-center text-sm">Normal</th>
-                  <th className="px-4 py-2 text-center text-sm">Inox</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredSpecs.map((spec, index) => (
-                  <tr
-                    key={index}
-                    onClick={() => setSelectedSize(selectedSize === index ? null : index)}
-                    className={`border-b border-gray-200 hover:bg-primary-50 cursor-pointer transition-colors ${
-                      selectedSize === index ? 'bg-primary-100' : ''
-                    }`}
-                  >
-                    <td className="px-4 py-4 font-bold text-primary-700">{spec.litros}L</td>
-                    <td className="px-4 py-4 text-gray-700 text-sm">{spec.garrafas}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimExternas.h}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimExternas.l}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimExternas.c}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimInternas.h}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimInternas.l}</td>
-                    <td className="px-4 py-4 text-center text-gray-700">{spec.dimInternas.c}</td>
-                    <td className="px-4 py-4 text-center font-semibold text-gray-900">{spec.peso}</td>
-                    <td className="px-4 py-4 text-center font-semibold text-green-600">{spec.valorNormal}</td>
-                    <td className="px-4 py-4 text-center font-semibold text-blue-600">{spec.valorInox}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="lg:hidden space-y-4">
+        {/* Simplified Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredSpecs.map((spec, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              <div className="bg-primary-600 text-white p-4">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="text-3xl font-bold">{spec.litros}L</div>
-                    <div className="text-sm text-primary-100">{spec.garrafas}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm">Peso</div>
-                    <div className="text-2xl font-bold">{spec.peso}</div>
+              {/* Card Header - Main Info */}
+              <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-6">
+                <div className="text-center">
+                  <div className="text-5xl font-bold mb-2">{spec.litros}L</div>
+                  <div className="text-primary-100 text-lg">
+                    Até {spec.garrafas} garrafas
                   </div>
                 </div>
               </div>
-              
-              <div className="p-4 space-y-3">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <div className="text-xs text-gray-500 mb-1">Dim. Externas (cm)</div>
-                    <div className="font-semibold text-gray-900">
-                      {spec.dimExternas.h} × {spec.dimExternas.l} × {spec.dimExternas.c}
+
+              {/* Card Body - Prices */}
+              <div className="p-6">
+                <div className="space-y-4">
+                  {/* Normal Price */}
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span className="text-gray-700 font-medium">Galvanizado/Pintado</span>
+                    <span className="text-xl font-bold text-green-600">{spec.valorNormal}</span>
+                  </div>
+
+                  {/* Inox Price */}
+                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                    <span className="text-gray-700 font-medium">Inox</span>
+                    <span className="text-xl font-bold text-blue-600">{spec.valorInox}</span>
+                  </div>
+
+                  {/* Expandable Details Button */}
+                  <button
+                    onClick={() => toggleCard(index)}
+                    className="w-full flex items-center justify-center gap-2 py-3 text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 border border-primary-200"
+                  >
+                    <span className="font-medium">
+                      {expandedCard === index ? 'Ocultar Detalhes' : 'Ver Detalhes Técnicos'}
+                    </span>
+                    {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
+                  </button>
+
+                  {/* Expanded Technical Details */}
+                  {expandedCard === index && (
+                    <div className="pt-4 border-t space-y-3 animate-fadeIn">
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <div className="text-xs text-gray-500 mb-1">Dimensões Externas (cm)</div>
+                        <div className="font-semibold text-gray-900">
+                          A: {spec.dimExternas.h} × L: {spec.dimExternas.l} × C: {spec.dimExternas.c}
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <div className="text-xs text-gray-500 mb-1">Dimensões Internas (cm)</div>
+                        <div className="font-semibold text-gray-900">
+                          A: {spec.dimInternas.h} × L: {spec.dimInternas.l} × C: {spec.dimInternas.c}
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <div className="text-xs text-gray-500 mb-1">Peso Aproximado</div>
+                        <div className="font-semibold text-gray-900">{spec.peso}</div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <div className="text-xs text-gray-500 mb-1">Dim. Internas (cm)</div>
-                    <div className="font-semibold text-gray-900">
-                      {spec.dimInternas.h} × {spec.dimInternas.l} × {spec.dimInternas.c}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="border-t pt-3 flex justify-between items-center">
-                  <div>
-                    <div className="text-xs text-gray-500">Normal</div>
-                    <div className="font-bold text-green-600">{spec.valorNormal}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xs text-gray-500">Inox</div>
-                    <div className="font-bold text-blue-600">{spec.valorInox}</div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
